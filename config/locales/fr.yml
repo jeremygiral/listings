@@ -52,6 +52,7 @@ fr:
   activerecord:
     attributes:
       listing:
+        name: "Annonces"
         title: "Titre de l'annonce"
         description: "Description"
         picture: "Choisissez une image"

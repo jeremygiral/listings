@@ -1,0 +1,20 @@
+- @listings.each do |listing|
+  .row
+    .xs-12.listing
+      %h3= listing.title
+    %p.date= l(listing.created_at)
+
+    .row
+      .col-xs-2
+        %a{href: listing_path(listing)}
+          - begin
+            = image_tag listing.picture, width: 300, class: 'img_responsive'
+          - rescue
+            = "No image"
+      .col-xs-10
+        %p= listing.description
+        .clearfix
+
+        /%span_price= number_to_currency(listing.price, unit:'€')
+      /  = link_to t('contact'), new_user_session_path, class: 'btn btn-primary pull-right', data: {do:
+      /=partial: '/modals/contact'
